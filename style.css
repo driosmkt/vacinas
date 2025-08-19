@@ -1,0 +1,188 @@
+/* =============================================================== */
+/* --- CONFIGURAÇÕES GLOBAIS E VARIÁVEIS ---                       */
+/* =============================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap');
+
+:root {
+    --color-bg-darkest: #030712;
+    --color-bg-dark: #111827;
+    --color-bg-card: rgba(17, 24, 39, 0.8);
+    --color-text-light: #f3f4f6;
+    --color-text-medium: #d1d5db;
+    --color-cyan: #22d3ee;
+    --color-green: #00ff87;
+    --color-border: rgba(34, 211, 238, 0.2);
+    --cyber-gradient: linear-gradient(90deg, var(--color-cyan), var(--color-green));
+}
+
+body {
+    background-color: var(--color-bg-darkest);
+    color: var(--color-text-medium);
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZhtPSIyMCIgZmlsbD0icmdiYSgwLCAyMDksIDI1NSwgMC4wNSkiPjwvcmVjdD48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiPjwvcmVjdD48L3N2Zz4=');
+}
+
+.container {
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+section, header, footer {
+    padding: 2rem 0;
+}
+
+.bg-darker {
+    background-color: var(--color-bg-dark);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0 0 1rem 0;
+    color: var(--color-text-light);
+}
+
+.subheadline {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 1rem auto 2rem auto;
+    color: var(--color-text-medium);
+}
+
+/* =============================================================== */
+/* --- ANIMAÇÃO SCANLINE E GRADIENTES ---                          */
+/* =============================================================== */
+@keyframes scanline-anim { from { top: -10%; } to { top: 100%; } }
+.scanline-effect { position: relative; overflow: hidden; }
+.scanline-effect::after { content: ''; position: absolute; left: 0; width: 100%; height: 2px; background: linear-gradient(to right, transparent, rgba(34, 211, 238, 0.5), transparent); box-shadow: 0 0 8px var(--color-cyan); animation: scanline-anim 4s linear infinite alternate; z-index: 2; }
+
+.gradient-text { background-image: var(--cyber-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cyber-gradient { background-image: var(--cyber-gradient); }
+
+/* =============================================================== */
+/* --- BOTÕES (CTA) ---                                            */
+/* =============================================================== */
+.cta-button {
+    background-image: var(--cyber-gradient);
+    border: none;
+    color: var(--color-bg-darkest);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+}
+.cta-button:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(0, 255, 135, 0.6); }
+.cta-button.large { font-size: 1.5rem; padding: 1.2rem 3rem; }
+
+/* =============================================================== */
+/* --- HEADER (HERO) ---                                           */
+/* =============================================================== */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.hero-section h1 { font-size: 3.2rem; font-weight: 900; color: var(--color-text-light); line-height: 1.2; margin-bottom: 1rem; }
+
+/* =============================================================== */
+/* --- SEÇÕES E CARDS ---                                          */
+/* =============================================================== */
+.glass-card { background-color: var(--color-bg-card); backdrop-filter: blur(10px); border: 1px solid var(--color-border); border-radius: 1rem; padding: 2rem; }
+.credibility-metrics { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 3rem; font-weight: 500; }
+.metric-item { background-color: rgba(34, 211, 238, 0.1); border: 1px solid var(--color-border); padding: 0.75rem 1.5rem; border-radius: 50px; }
+.client-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; filter: grayscale(1) brightness(1.5); opacity: 0.6; }
+
+.problem-list { list-style: none; padding: 0; text-align: left; font-size: 1.2rem; }
+.problem-list li { margin-bottom: 1rem; }
+
+.method-title { font-size: 1.5rem; color: var(--color-cyan); font-weight: bold; margin-bottom: 2rem; }
+.method-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; text-align: left; }
+.method-item { background: var(--color-bg-dark); border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; gap: 1rem; border: 1px solid var(--color-border); }
+.method-item span { font-size: 3rem; font-weight: 900; color: var(--color-cyan); }
+.method-item h3 { margin: 0 0 0.25rem 0; color: var(--color-text-light); }
+.method-item p { margin: 0; font-size: 0.9rem; }
+.method-item.full-span { grid-column: 1 / -1; }
+
+.cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.case-card h4 { font-size: 1.2rem; color: var(--color-cyan); margin-bottom: 1rem; }
+.case-card ul { list-style: none; padding: 0; text-align: left; margin-bottom: 1.5rem; }
+.case-card li { margin-bottom: 0.5rem; }
+.case-card blockquote { font-style: italic; color: var(--color-text-light); border-left: 3px solid var(--color-cyan); padding-left: 1rem; text-align: left; }
+.case-card blockquote span { display: block; font-style: normal; font-weight: bold; color: var(--color-text-medium); margin-top: 0.5rem; }
+
+/* =============================================================== */
+/* --- OFERTA E FORMULÁRIO ---                                     */
+/* =============================================================== */
+.offer-card { border: 2px solid var(--color-cyan); box-shadow: 0 0 30px rgba(34, 211, 238, 0.3); padding: 2rem; border-radius: 1rem; background-color: var(--color-bg-dark); }
+.price-old { text-decoration: line-through; opacity: 0.6; }
+.price-new { color: var(--color-green); font-weight: bold; font-size: 1.5rem; }
+.offer-list { list-style: none; padding: 0; margin: 2rem 0; display: inline-block; text-align: left; }
+.offer-list li { margin-bottom: 0.5rem; }
+.urgency-banner { background-color: #eab308; color: var(--color-bg-darkest); font-weight: bold; padding: 0.75rem; border-radius: 0.5rem; margin-top: 1rem; }
+
+.contact-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.contact-form h3 { color: var(--color-text-light); }
+.contact-form input, .contact-form select { background-color: var(--color-bg-dark); border: 1px solid var(--color-border); color: var(--color-text-light); padding: 1rem; border-radius: 0.5rem; font-size: 1rem; font-family: 'Work Sans'; }
+.contact-form input::placeholder { color: #6b7280; }
+.contact-form select { appearance: none; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; }
+.contact-form input:focus, .contact-form select:focus { outline: none; border-color: var(--color-cyan); box-shadow: 0 0 10px rgba(34, 211, 238, 0.5); }
+.contact-form button { margin-top: 1rem; }
+
+/* =============================================================== */
+/* --- GARANTIAS, FAQ, SOBRE ---                                   */
+/* =============================================================== */
+.guarantees-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.guarantee-item { background-color: var(--color-bg-dark); padding: 2rem; border-radius: 1rem; border: 1px solid var(--color-border); text-align: center; }
+.guarantee-item .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.guarantee-item h3 { margin: 0 0 0.5rem 0; color: var(--color-text-light); }
+
+.faq-container { max-width: 700px; margin: 0 auto; }
+.faq-item { background-color: var(--color-bg-dark); border: 1px solid var(--color-border); border-radius: 0.5rem; margin-bottom: 1rem; }
+.faq-item summary { font-size: 1.2rem; font-weight: bold; color: var(--color-text-light); padding: 1rem 1.5rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; font-size: 2rem; color: var(--color-cyan); transition: transform 0.2s; }
+.faq-item[open] summary::after { content: '−'; transform: rotate(180deg); }
+.faq-item p { padding: 0 1.5rem 1.5rem 1.5rem; margin: 0; border-top: 1px solid var(--color-border); padding-top: 1rem; }
+
+.about-card { display: flex; gap: 2rem; align-items: center; background: var(--color-bg-dark); padding: 2rem; border-radius: 1rem; text-align: left; }
+.about-image img { border-radius: 50%; border: 3px solid var(--color-cyan); }
+.about-text h3 { margin-top: 0; color: var(--color-text-light); font-size: 1.5rem; }
+.about-text ul { list-style: none; padding: 0; }
+.about-text li { margin-bottom: 0.5rem; }
+
+/* =============================================================== */
+/* --- FOOTER E RESPONSIVIDADE ---                                 */
+/* =============================================================== */
+footer#final-cta .container { border-top: 1px solid var(--color-border); }
+.urgency-final { margin-top: 1rem; font-weight: bold; color: var(--color-text-light); }
+.urgency-final strong { color: var(--color-green); }
+
+@media (max-width: 768px) {
+    body { font-size: 1rem; }
+    .container { padding: 2rem 0; }
+    .hero-section h1 { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+    .subheadline { font-size: 1.1rem; }
+    .credibility-metrics, .client-logos { flex-direction: column; }
+    .method-grid { grid-template-columns: 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .guarantees-grid { grid-template-columns: 1fr; }
+    .about-card { flex-direction: column; text-align: center; }
+}
